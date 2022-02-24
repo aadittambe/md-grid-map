@@ -1,44 +1,52 @@
-var customLabels = {
-    "Maryland": {
-        "full": "Maryland state", //used in tooltip
-        "short": "MD", //used in small breakpoint
-        "ap": "Md." //label format used in larger breakpoints. Can be renamed from "ap" if option `labelStyle` is changed to match or not included if `labelStyle` is set to "full" or "short".
-    },
-    "New York": {
-        "full": "New York state",
-        "short": "Ny."
-    },
-    "Pennsylvania": {
-        "full": "Pennsylvania state",
-        "short": "Pa."
-    },
-    "Iowa": {
-        "full": "Iowa state",
-        "short": "Ia."
-    }
-}
+// var customLabels = {
+//     "Maryland": {
+//         "full": "Maryland state", //used in tooltip
+//         "short": "MD", //used in small breakpoint
+//         "ap": "Md." //label format used in larger breakpoints. Can be renamed from "ap" if option `labelStyle` is changed to match or not included if `labelStyle` is set to "full" or "short".
+//     },
+//     "New York": {
+//         "full": "New York state",
+//         "short": "Ny."
+//     },
+//     "Pennsylvania": {
+//         "full": "Pennsylvania state",
+//         "short": "Pa."
+//     },
+//     "Iowa": {
+//         "full": "Iowa state",
+//         "short": "Ia."
+//     }
+// }
 
 var data = {
     "Maryland": {
         "count": 100,
         "Direction": "Longitude",
         "Fun fact": "Compasses love me",
-        "note": "Also, the north star."
+        "note": "Also, the north star.",
+        "full": "MD",
+        "short": "Md."
     },
     "New York": {
         "count": 90,
         "Direction": "Latitude",
-        "Fun fact": "Where the sun rises"
+        "Fun fact": "Where the sun rises",
+        "full": "New York state",
+        "short": "Ny."
     },
     "Pennsylvania": {
         "count": 50,
         "Direction": "Longitude",
-        "Fun fact": "Come to me for penguins"
+        "Fun fact": "Come to me for penguins",
+        "full": "Pennsylvania state",
+        "short": "Pa."
     },
     "Iowa": {
         "count": 20,
         "Direction": "Latitude",
-        "Fun fact": "Where the sun sets"
+        "Fun fact": "Where the sun sets",
+        "full": "Iowa state",
+        "short": "Ia."
     }
 };
 
@@ -49,8 +57,8 @@ var customMap = new Squaire(data, {
     layout: ",Maryland,\n" +
         "New York,,Pennsylvania\n" +
         ",Iowa,\n",
-    labels: customLabels,
-    labelStyle: "full",
+    labels: data,
+    labelStyle: "short",
     index: "count",
     indexType: "string",
     colors: d3.scale.linear().domain([100, 20]).range(["#c9e2f5", "#c6e2ba"]),
