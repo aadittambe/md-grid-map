@@ -68,7 +68,7 @@ var data = {
         "2020": "967,201",
         "Change": "103,781",
         "Percent Change": 12.0,
-        "short": "PG",
+        "short": "P.G.",
         "full": "Prince George's County"
     },
     "Calvert": {
@@ -116,7 +116,7 @@ var data = {
         "2020": "154,705",
         "Change": "7,275",
         "Percent Change": 4.9,
-        "short": "Washington",
+        "short": "Wash.",
         "full": "Washington County"
     },
     "Caroline": {
@@ -211,7 +211,7 @@ var customMap = new Squaire(data, {
     labelStyle: "short",
     index: "Percent Change",
     indexType: "string",
-    colors: d3.scale.linear().domain([-10, 16]).range(["#de5826", "#1979b9"]),
+    colors: d3.scale.linear().domain([-10, 17]).range(["#de5826", "#1979b9"]),
     tooltip: {
         enabled: true,
         mode: "static",
@@ -223,7 +223,12 @@ var customMap = new Squaire(data, {
     }
 });
 function infoHTML(d) {
-    console.log(d)
-    var html = '<hr><span id="tooltip-body"><h4>' + d.data.full + ": " + d.data["Percent Change"] + "% change in population from 2010 to 2020" + "</h4><hr>"
-    return html;
+    var html;
+    if (d.data["Percent Change"] > 0) {
+        html = '<hr><span id="tooltip-body"><h4>' + "<span class='inc'>" + d.data.full + "'s</span> population" + " changed " + "<span class='inc'>" + d.data["Percent Change"] + " percent</span>, from " + d.data["2010"] + " residents in 2010 to " + d.data["2020"] + " residents in 2020." + "</h4><hr>"
+        // return html;
+    } else {
+        html = '<hr><span id="tooltip-body"><h4>' + "<span class='dec'>" + d.data.full + "'s</span> population" + " changed " + "<span class='dec'>" + d.data["Percent Change"] + " percent</span>, from " + d.data["2010"] + " residents in 2010 to " + d.data["2020"] + " residents in 2020." + "</h4><hr>"
+    }
+    return html
 }
