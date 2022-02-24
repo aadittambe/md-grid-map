@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="dist/squaire.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     <script src="dist/squaire.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="dist/squaire.min.js" charset="utf-8"></script>
 
     <title>Maryland counties equal-area grid cartogram</title>
 
@@ -33,6 +35,21 @@
             height: auto;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        h3 {
+            font-size: 16px;
+            line-height: 22px;
         }
 
         text {
@@ -81,12 +98,27 @@
 
 <body>
     <div id="container">
+        <h1>Percent change in population in Maryland counties</h1>
+        <h3>BY AADIT TAMBE</h3>
+        <h2>Census data shows a 7% increase in Maryland's population in the last decade. Frederick County saw the
+            highest increase in residents (16.4%), while Allegany County experienced the sharpest decrease (-9.3%).
+        </h2>
         <div class="legend legend-horizontal">
             <div><span class="legend-box x"></span> <span class="legend-value">-10% change</span></div>
             <div><span class="legend-box y"></span> <span class="legend-value">16% change</span></div>
         </div>
         <div id="custom-layout"></div>
-        <div id="custom-layout-toolbox"></div>
+        <div id="info">
+            <hr>
+            <h4>Click on a county to see the percent change in population from 2010 to 2020.</h4>
+            <hr>
+        </div>
+
+        <h3>
+            Source: Analysis of 2020 data from the <a
+                href="https://planning.maryland.gov/MSDC/Pages/census/censusdata.aspx">US Census
+                Bureau</a>
+        </h3>
         <script type="text/javascript" src="script.js"></script>
 
     </div>
