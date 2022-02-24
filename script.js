@@ -1,74 +1,59 @@
 var customLabels = {
-    "N": {
-        "full": "North", //used in tooltip
-        "short": "N", //used in small breakpoint
-        "ap": "N", //label format used in larger breakpoints. Can be renamed from "ap" if option `labelStyle` is changed to match or not included if `labelStyle` is set to "full" or "short".
+    "Maryland": {
+        "full": "Maryland state", //used in tooltip
+        "short": "MD", //used in small breakpoint
+        "ap": "Md." //label format used in larger breakpoints. Can be renamed from "ap" if option `labelStyle` is changed to match or not included if `labelStyle` is set to "full" or "short".
     },
-    "E": {
-        "full": "East",
-        "short": "E",
+    "New York": {
+        "full": "New York state",
+        "short": "Ny."
     },
-    "S": {
-        "full": "South",
-        "short": "S",
+    "Pennsylvania": {
+        "full": "Pennsylvania state",
+        "short": "Pa."
     },
-    "W": {
-        "full": "West",
-        "short": "W",
-    },
-    "Aadit": {
-        "full": "AAAADIT",
-        "short": "AT",
-    },
-    "Tambe": {
-        "full": "TAMBE",
-        "short": "TA",
-    },
-    "Data": {
-        "full": "DATA",
-        "short": "ATAD",
+    "Iowa": {
+        "full": "Iowa state",
+        "short": "Ia."
     }
 }
 
-var customData = {
-    "N": {
+var data = {
+    "Maryland": {
+        "count": 100,
         "Direction": "Longitude",
         "Fun fact": "Compasses love me",
-        "note": "Also, the north star.",
-        "x": 1,
-        "y": 0
+        "note": "Also, the north star."
     },
-    "E": {
+    "New York": {
+        "count": 90,
         "Direction": "Latitude",
         "Fun fact": "Where the sun rises"
     },
-    "S": {
+    "Pennsylvania": {
+        "count": 50,
         "Direction": "Longitude",
         "Fun fact": "Come to me for penguins"
     },
-    "W": {
+    "Iowa": {
+        "count": 20,
         "Direction": "Latitude",
         "Fun fact": "Where the sun sets"
     }
 };
 
-var test = [
-    { "name": "N", "x": 1, "y": 0 },
-    { "name": "E", "x": 2, "y": 1 },
-    { "name": "S", "x": 1, "y": 2 },
-    { "name": "W", "x": 0, "y": 1 }
-]
-console.log(test)
-var customMap = new Squaire(customData, {
+// var data = {}
+
+var customMap = new Squaire(data, {
     el: "#custom-layout",
-    layout: "Aadit,N, ,\n" +
-        "W,Tambe,E\n" +
-        " ,S,Data\n",
+    layout: ",Maryland,\n" +
+        "New York,,Pennsylvania\n" +
+        ",Iowa,\n",
     labels: customLabels,
     labelStyle: "full",
-    index: "Direction",
+    index: "count",
     indexType: "string",
-    colors: d3.scale.ordinal(["Longitude", "Latitude"]).range(["#c9e2f5", "#c6e2ba"]),
+    colors: d3.scale.linear().domain([100, 20]).range(["#c9e2f5", "#c6e2ba"]),
     tooltip: {
         enabled: true,
         mode: "static",
@@ -80,4 +65,3 @@ var customMap = new Squaire(customData, {
         "small": 300
     }
 });
-
