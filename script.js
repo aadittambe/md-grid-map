@@ -4,14 +4,14 @@ var data = {
         "2020": "588,261",
         "Change": "50,605",
         "Percent Change": 9.4,
-        "short": "Anne Arundel"
+        "short": "A. Arundel"
     },
     "Baltimore": {
         "2010": "805,029",
         "2020": "854,535",
         "Change": "49,506",
         "Percent Change": 6.1,
-        "short": "Baltimore County"
+        "short": "Baltimore"
     },
     "Carroll": {
         "2010": "167,134",
@@ -39,7 +39,7 @@ var data = {
         "2020": "585,708",
         "Change": "-35,253",
         "Percent Change": -5.7,
-        "short": "Baltimore City"
+        "short": "Balt. city"
     },
     "Frederick": {
         "2010": "233,385",
@@ -53,14 +53,14 @@ var data = {
         "2020": "1,062,061",
         "Change": "90,284",
         "Percent Change": 9.3,
-        "short": "Montgomery"
+        "short": "Mont."
     },
     "Prince George's": {
         "2010": "863,420",
         "2020": "967,201",
         "Change": "103,781",
         "Percent Change": 12.0,
-        "short": "Prince George's"
+        "short": "PG"
     },
     "Calvert": {
         "2010": "88,737",
@@ -130,7 +130,7 @@ var data = {
         "2020": "49,874",
         "Change": "2,076",
         "Percent Change": 4.3,
-        "short": "Queen Anne's"
+        "short": "Q. Anne's"
     },
     "Talbot": {
         "2010": "37,782",
@@ -187,7 +187,7 @@ var customMap = new Squaire(data, {
     labelStyle: "short",
     index: "Percent Change",
     indexType: "string",
-    colors: d3.scale.linear().domain([-10, 10]).range(["#c9e2f5", "#c6e2ba"]),
+    colors: d3.scale.linear().domain([-10, 16]).range(["#de5826", "#1979b9"]),
     tooltip: {
         enabled: false,
         mode: "static",

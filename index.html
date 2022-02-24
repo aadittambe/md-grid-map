@@ -1,14 +1,94 @@
-<link rel="stylesheet" href="dist/squaire.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-<script src="dist/squaire.js"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="col-sm-4 col-sm-offset-1 col-xs-6 col-xs-offset-3">
-    <div class="legend legend-horizontal">
-        <div><span class="legend-box latitude"></span> <span class="legend-value">Latitude</span></div>
-        <div><span class="legend-box longitude"></span> <span class="legend-value">Longitude</span></div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/squaire.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="dist/squaire.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Maryland counties equal-area grid cartogram</title>
+
+    <style>
+        #container {
+            font-family: 'Roboto', sans-serif;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            border-left: 1px solid black;
+            border-bottom: 14pt solid black;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            box-shadow: 5px 5px 10px gainsboro;
+            min-width: 300px;
+            max-width: 600px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        text {
+            font-size: 12px !important;
+        }
+
+        .legend {
+            margin: 10px 0;
+            text-align: right;
+        }
+
+        .legend.legend-horizontal>div {
+            display: inline-block;
+        }
+
+        .legend .legend-box {
+            width: 80px;
+            height: 16px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .legend .legend-value {
+            display: inline-block;
+            margin: -1px 8px 5px 5px;
+            vertical-align: top;
+        }
+
+        .legend .x {
+            display: none;
+            /* background-color: #de5826; */
+        }
+
+        .legend .y {
+            background-image: linear-gradient(to right, #de5826, #1979b9);
+        }
+
+        @media only screen and (max-width: 600px) {
+            text {
+                font-size: 8px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="legend legend-horizontal">
+            <div><span class="legend-box x"></span> <span class="legend-value">-10% change</span></div>
+            <div><span class="legend-box y"></span> <span class="legend-value">16% change</span></div>
+        </div>
+        <div id="custom-layout"></div>
+        <div id="custom-layout-toolbox"></div>
+        <script type="text/javascript" src="script.js"></script>
+
     </div>
-    <div id="custom-layout"></div>
-    <div id="custom-layout-toolbox"></div>
-</div>
+</body>
 
-<script type="text/javascript" src="script.js"></script>
+</html>
